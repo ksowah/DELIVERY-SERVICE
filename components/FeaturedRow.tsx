@@ -1,11 +1,13 @@
 import { View, Text, ScrollView } from 'react-native'
 import { AntDesign } from '@expo/vector-icons';
 import RestaurantCard from './RestaurantCard';
+import { featuredMenuCategories } from '../data';
+
 
 interface Props {
     title: String,
     description: String,
-    id: String,
+    id: Number,
 }
 
 const FeaturedRow = ({title, description, id}: Props) => {
@@ -24,54 +26,23 @@ const FeaturedRow = ({title, description, id}: Props) => {
             showsHorizontalScrollIndicator={false}
             className="pt-4"
         >
-            <RestaurantCard 
-                address={"123 Main Street"}
-                dishes={[]}
-                genre={"Japanese"}
-                id={123}
-                image={"https://links.papareact.com/gn7"}
-                lat={0}
-                long={20}
-                rating={4.5}
-                short_description={"This is a short text description"}
-                title="Yo! Sushie"
-            />
-            <RestaurantCard 
-                address={"123 Main Street"}
-                dishes={[]}
-                genre={"Japanese"}
-                id={123}
-                image={"https://links.papareact.com/gn7"}
-                lat={0}
-                long={20}
-                rating={4.5}
-                short_description={"This is a short text description"}
-                title="Yo! Sushie"
-            />
-            <RestaurantCard 
-                address={"123 Main Street"}
-                dishes={[]}
-                genre={"Japanese"}
-                id={123}
-                image={"https://links.papareact.com/gn7"}
-                lat={0}
-                long={20}
-                rating={4.5}
-                short_description={"This is a short text description"}
-                title="Yo! Sushie"
-            />
-            <RestaurantCard 
-                address={"123 Main Street"}
-                dishes={[]}
-                genre={"Japanese"}
-                id={123}
-                image={"https://links.papareact.com/gn7"}
-                lat={0}
-                long={20}
-                rating={4.5}
-                short_description={"This is a short text description"}
-                title="Yo! Sushie"
-            />
+            {featuredMenuCategories.map( (res, idx) => (
+                res?.id === id && 
+                <RestaurantCard 
+                    key={idx}
+                    address={res.address}
+                    dishes={[]}
+                    genre={"Japanese"}
+                    id={id}
+                    image={res.image}
+                    lat={res.lat}
+                    long={res.lon}
+                    rating={res.rating}
+                    short_description={res.description}
+                    title= {res.name}
+                />
+            ))}
+           
             
         </ScrollView>
     </View>
