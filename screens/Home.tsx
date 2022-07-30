@@ -1,9 +1,11 @@
 import { useNavigation } from '@react-navigation/native'
-import { useLayoutEffect } from 'react'
-import { View, Text, SafeAreaView, Image, TextInput, ScrollView } from 'react-native'
+import { useEffect, useLayoutEffect, useState } from 'react'
+import { View, Text, SafeAreaView, Image, TextInput, ScrollView, StatusBar } from 'react-native'
 import { Entypo, FontAwesome5, MaterialCommunityIcons, AntDesign } from '@expo/vector-icons';
 import Categories from '../components/Categories';
 import FeaturedRow from '../components/FeaturedRow';
+import { featuredCategories } from "../data"
+
 
 const Home = () => {
 
@@ -16,8 +18,14 @@ const Home = () => {
     })
   })
 
+  useEffect(() =>{
+    
+  }, [])
+
+
   return (
     <SafeAreaView className="bg-white">
+      <StatusBar barStyle={'dark-content'}/>
       <View>
         <View className="flex-row pb-3 items-center mx-4 space-x-2">
           <Image
@@ -55,9 +63,10 @@ const Home = () => {
         >
           <Categories />
 
-          <FeaturedRow title={"Featured"} description="Paid placements from our partners" id={"123"}/>
-          <FeaturedRow title={"Featured"} description="Paid placements from our partners" id={"123"}/>
-          <FeaturedRow title={"Featured"} description="Paid placements from our partners" id={"123"}/>
+          {featuredCategories?.map((item: any) => (
+            <FeaturedRow key={item.id} title={item?.title} description={item.description} id={item.id}/>
+          ))}
+          
         </ScrollView>
       </View>
     </SafeAreaView>
