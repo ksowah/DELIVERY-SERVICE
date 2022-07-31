@@ -25,6 +25,7 @@ export const featuredMenuCategories = [
         lon: 114.78458,
         address: "GR8 Stoke Street",
         rating: 5,
+        category: 1,
         id: 1,
         
     },
@@ -36,7 +37,8 @@ export const featuredMenuCategories = [
         lon: -103.01914,
         address: "AP6 Sanity Street",
         rating: 4,
-        id: 1,
+        category: 1,
+        id: 2,
     },
     {
         name: "Break Fast ",
@@ -46,7 +48,8 @@ export const featuredMenuCategories = [
         lon: 28.96597,
         address: "PR25 Ocksland Street",
         rating: 5,
-        id: 1,
+        category: 1,
+        id: 3,
     },
     {
         name: "Fisher",
@@ -56,7 +59,8 @@ export const featuredMenuCategories = [
         lon: 50.69273,
         address: "AR12 Jake Street",
         rating: 5,
-        id: 1,
+        category: 1,
+        id: 4,
     },
 
     // second 
@@ -68,7 +72,8 @@ export const featuredMenuCategories = [
         lon: 103.93669,
         address: "CR8 Pirates Street",
         rating: 4,
-        id: 2,
+        category: 2,
+        id: 5,
     },
     {
         name: "Night Market",
@@ -78,7 +83,8 @@ export const featuredMenuCategories = [
         lon: 35.3256,
         address: "RA4 Golden Street",
         rating: 3,
-        id: 2,
+        category: 2,
+        id: 6,
     },
     {
         name: "Grimm",
@@ -88,7 +94,8 @@ export const featuredMenuCategories = [
         lon: 35.3256,
         address: "GR4 Grimm Street",
         rating: 4,
-        id: 2,
+        category: 2,
+        id: 7,
     },
 
     // third
@@ -100,7 +107,8 @@ export const featuredMenuCategories = [
         lon: 35.3256,
         address: "CP8 Atlantic Street",
         rating: 5,
-        id: 2,
+        category: 2,
+        id: 8,
     },
     {
         name: "Light Haven",
@@ -110,7 +118,8 @@ export const featuredMenuCategories = [
         lon: 35.3256,
         address: "PR3 Stoke Street",
         rating: 4,
-        id: 3,
+        category: 3,
+        id: 9,
     },
     {
         name: "Mighty Stake",
@@ -120,7 +129,8 @@ export const featuredMenuCategories = [
         lon: 35.3256,
         address: "MS6 Mass Street",
         rating: 5,
-        id: 3,
+        category: 3,
+        id: 10,
     },
     {
         name: "Blue Fill",
@@ -130,7 +140,8 @@ export const featuredMenuCategories = [
         lon: 35.3256,
         address: "PC8 Procto Street",
         rating: 4,
-        id: 3,
+        category: 3,
+        id: 11,
     },
     {
         name: "The Gladiators",
@@ -140,7 +151,8 @@ export const featuredMenuCategories = [
         lon: 35.3256,
         address: "BC5 Gladiators Street",
         rating: 4,
-        id: 3,
+        category: 3,
+        id: 12,
     },
 
 ]
@@ -170,5 +182,12 @@ export const categories = [
     {
         title: "Chinese",
         image: require("./assets/fish.jpg")
+    },
+]
+
+
+const dishes = [
+    {
+        
     },
 ]
