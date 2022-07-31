@@ -64,7 +64,7 @@ const Home = () => {
           <Categories />
 
           {featuredCategories?.map((item: any) => (
-            <FeaturedRow key={item.id} title={item?.title} description={item.description} id={item.id}/>
+            <FeaturedRow key={item.id} title={item?.title} description={item.description} category={item.id}/>
           ))}
           
         </ScrollView>
