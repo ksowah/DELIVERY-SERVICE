@@ -7,10 +7,10 @@ import { featuredMenuCategories } from '../data';
 interface Props {
     title: String,
     description: String,
-    id: Number,
+    category: Number,
 }
 
-const FeaturedRow = ({title, description, id}: Props) => {
+const FeaturedRow = ({title, description, category}: Props) => {
   return (
     <View>
         <View className="mt-4 flex-row items-center justify-between px-4">
@@ -27,19 +27,20 @@ const FeaturedRow = ({title, description, id}: Props) => {
             className="pt-4"
         >
             {featuredMenuCategories.map( (res, idx) => (
-                res?.id === id && 
+                res?.category === category && 
                 <RestaurantCard 
                     key={idx}
                     address={res.address}
                     dishes={[]}
                     genre={"Japanese"}
-                    id={id}
+                    category={category}
                     image={res.image}
                     lat={res.lat}
                     long={res.lon}
                     rating={res.rating}
                     short_description={res.description}
                     title= {res.name}
+                    
                 />
             ))}
            

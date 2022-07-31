@@ -4,12 +4,8 @@ import CategoryCard from './CategoryCard'
 import { categories } from '../data'
 
 
-interface Props {
-  image: String,
-  title: String
-}
 
-const Categories = ({image, title}: Props) => {
+const Categories = () => {
   return (
     <ScrollView horizontal showsHorizontalScrollIndicator={false}
       contentContainerStyle={{paddingHorizontal: 15, paddingTop: 10}}

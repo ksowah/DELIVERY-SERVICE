@@ -1,9 +1,10 @@
 import { View, Text, TouchableOpacity, Image } from 'react-native'
 import { AntDesign, MaterialCommunityIcons } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native';
 
 
 interface Props {
-    id: Number,
+    category: Number,
     image: String,
     title: String,
     rating: Number,
@@ -13,12 +14,18 @@ interface Props {
     dishes: any,
     long: Number,
     lat: Number,
-
 }
 
-const RestaurantCard = ({ id, image, title, rating, genre, address, short_description, dishes, long, lat }: Props) => {
+const RestaurantCard = ({ category, image, title, rating, genre, address, short_description, dishes, long, lat }: Props) => {
+
+  const navigation: any = useNavigation()
+
   return (
-    <TouchableOpacity className="bg-white mr-3 shadow">
+    <TouchableOpacity className="bg-white mr-3 shadow"
+      onPress={() => navigation.navigate("Restaurant", {
+        category, image, title, rating, genre, address, short_description, dishes, long, lat
+      })}
+    >
       <Image source={image}
         className="h-36 w-64 rounded-sm"
       />
