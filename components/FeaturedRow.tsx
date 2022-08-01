@@ -31,7 +31,7 @@ const FeaturedRow = ({title, description, category}: Props) => {
                 <RestaurantCard 
                     key={idx}
                     address={res.address}
-                    dishes={[]}
+                    dishes={res.dishes}
                     genre={"Japanese"}
                     category={category}
                     image={res.image}

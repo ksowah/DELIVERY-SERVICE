@@ -5,6 +5,7 @@ import { AntDesign } from '@expo/vector-icons';
 import { Entypo } from '@expo/vector-icons';
 import { Foundation } from '@expo/vector-icons';
 import DishRow from '../components/DishRow';
+import BasketIcon from '../components/BasketIcon';
 
 const Restaurant = () => {
 
@@ -24,6 +25,11 @@ const Restaurant = () => {
   }, [])
 
   return (
+    <>
+
+    <BasketIcon />
+
+
     <ScrollView>
       <View
         className={`relative`}
@@ -67,18 +73,18 @@ const Restaurant = () => {
       </TouchableOpacity> 
       </View>
 
-      <View>
+      <View className="pb-36">
         <Text className="px-4 pt-6 mb-3 font-bold text-xl">
           Menu
         </Text>
-
-        <DishRow />
-        <DishRow />
-        <DishRow />
-        <DishRow />
-        <DishRow />
+      {dishes?.map( (dish: any, idx: number) => (        
+        <DishRow key={idx} description={dish.desc} price={dish.price} image={dish.image} name={dish.name} id={dish.id} />
+      ) )}
+       
       </View>
     </ScrollView>
+
+    </>
   )
 }
 
